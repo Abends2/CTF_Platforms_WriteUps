@@ -13,12 +13,14 @@
 
 ![ScreenShot](screenshots/3.png)
 
+---
 
 ### Rubber Duck (+10 points)
 Утилита **file** способна показывать комментарий файла:
 
 ![ScreenShot](screenshots/4.png)
 
+---
 
 ### I'm a dump (+10 points)
 Для начала проверим файл при помощи утилиты **file**:
@@ -31,18 +33,21 @@
 
 > Note: Из флага надо убрать лишние буквы H
 
+---
 
 ### WOW.... So Meta (+20 points)
 Флаг находится в разделе "Camera Serial Number". Просмотр осуществляется при помощи улититы **exiftool**:
 
 ![ScreenShot](screenshots/7.png)
 
+---
 
 ### Exif (+20 points)
 Флаг находится в разделе "Owner Name". Просмотр осуществляется при помощи улититы **exiftool**:
 
 ![ScreenShot](screenshots/8.png)
 
+---
 
 ### Snowboard (+20 points)
 Смотрим файл через **strings**:
@@ -53,11 +58,14 @@
 
 ![ScreenShot](screenshots/10.png)
 
+---
+
 ### PikesPeak (+20 points)
 Тут на внимательность (формат флага):
 
 ![ScreenShot](screenshots/11.png)
 
+---
 
 ### Tux! (+20 points)
 Через **exiftool** находим закодированный комментарий. Сразу его декодируем:
@@ -72,4 +80,15 @@
 
 ![ScreenShot](screenshots/14.png)
 
+---
 
+### A CAPture of a Flag (+50 points)
+Открываем в WireShark файл с расширением .pcap. Далее я решил посмотреть на экспортируемые HTTP-объекты и нашел среди них следующуй перехваченный GET-запрос:
+
+![ScreenShot](screenshots/15.png)
+
+Декодируем строку из base64:
+
+![ScreenShot](screenshots/16.png)
+
+---
