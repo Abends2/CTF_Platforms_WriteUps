@@ -254,9 +254,9 @@ chmod – команда для изменения прав доступа к ф
 
 Дан архив, в котором находится код программы к микроконтроллеру, а также схема сборки макета.
 
-![ScreenShot](screenshots/31.png)
-
 ![ScreenShot](screenshots/32.png)
+
+![ScreenShot](screenshots/33.png)
 
 Также к заданию был предоставлен ресурс, с помощью которого можно проектировать собственные схемы, а также программировать микроконтроллеры в них.
 
@@ -264,13 +264,13 @@ chmod – команда для изменения прав доступа к ф
 
 Для начала мной была собрана схема:
 
-![ScreenShot](screenshots/33.png)
+![ScreenShot](screenshots/34.png)
 
 Мультиметр поставил в качестве эксперимента, он никакой роли здесь не играет.
 
 Далее занес код из файла в специальный раздел:
 
-![ScreenShot](screenshots/34.png)
+![ScreenShot](screenshots/35.png)
 
 Далее запустил моделирование и увидел, что светодиод мигает либо быстро, либо медленно, а иногда присутствуют и паузы. Значит, это скорее всего Азбука Морзе. Разность во времени миганий задается при помощи функции delay().
 
@@ -294,15 +294,15 @@ chmod – команда для изменения прав доступа к ф
 
 Дан архив, в котором находится код программы к микроконтроллеру, а также схема сборки макета.
 
-![ScreenShot](screenshots/35.png)
-
 ![ScreenShot](screenshots/36.png)
-
-Для начала была собрана схема и перенесен код в Tinkercad:
 
 ![ScreenShot](screenshots/37.png)
 
+Для начала была собрана схема и перенесен код в Tinkercad:
+
 ![ScreenShot](screenshots/38.png)
+
+![ScreenShot](screenshots/39.png)
 
 В задании было сказано, что флагом является последовательность символов «r», «g», «b», соответственно, включаем моделирование схемы и записываем последовательность загорания светодиодов.
 
@@ -314,15 +314,15 @@ chmod – команда для изменения прав доступа к ф
 
 Дан архив, в котором находится код программы к микроконтроллеру, а также схема сборки макета.
 
-![ScreenShot](screenshots/39.png)
-
 ![ScreenShot](screenshots/40.png)
-
-Далее собираем схему и переносим код программы:
 
 ![ScreenShot](screenshots/41.png)
 
+Далее собираем схему и переносим код программы:
+
 ![ScreenShot](screenshots/42.png)
+
+![ScreenShot](screenshots/43.png)
 
 После сборки включаем режим симуляции и смотрим за происходящим. Флагом является последовательность символов, показанных на 7-сегментном экране.
 
@@ -343,7 +343,7 @@ chmod – команда для изменения прав доступа к ф
 
 Находим названия элементов по номерам в таблице:
 
-![ScreenShot](screenshots/43.png)
+![ScreenShot](screenshots/44.png)
 
 При этом, необходимо учитывать регистр букв в названии элемента, поэтому флаг:
 
@@ -363,7 +363,7 @@ MZWGCZ33MRXW45DGN5ZGOZLUMFRG65LUIJAVGRJTGJ6Q==-==
 
 Скорее всего, два знака равно останутся, тогда выясняем, какая еще кодировка может иметь два равно на конце. Попробуем Base32:
 
-![ScreenShot](screenshots/44.png)
+![ScreenShot](screenshots/45.png)
 
 Флаг: **flag{dontforgetaboutBASE32}**
 
@@ -373,37 +373,37 @@ MZWGCZ33MRXW45DGN5ZGOZLUMFRG65LUIJAVGRJTGJ6Q==-==
 
 Перейдем по ссылке и увидим форму логин/пароль. Попробуем войти в систему с ником «user» и паролем «asd»:
 
-![ScreenShot](screenshots/45.png)
+![ScreenShot](screenshots/46.png)
 
 При нажатии на «Вход» происходит редирект на другую страницу, где видно, что создан новый аккаунт:
 
-![ScreenShot](screenshots/46.png)
+![ScreenShot](screenshots/47.png)
 
 Посмотрим на код страницы, а именно на js-скрипт:
 
-![ScreenShot](screenshots/47.png)
+![ScreenShot](screenshots/48.png)
 
 Суть этого скрипта в том, что функция me(), принимающая в качестве параметра login, возвращает результат POST-запроса, где находятся данные об аккаунте.
 
-![ScreenShot](screenshots/48.png)
+![ScreenShot](screenshots/49.png)
 
 Для теста получим значение переменной login. В результате получим наш текущий login, но в этом поле стоит текущий id. На скрине выше видно, что id это login.
 
-![ScreenShot](screenshots/49.png)
+![ScreenShot](screenshots/50.png)
 
 Попробуем передать в функцию me() наш id:
 
-![ScreenShot](screenshots/50.png)
+![ScreenShot](screenshots/51.png)
 
 В итоге получим наши данные при входе в систему:
 
-![ScreenShot](screenshots/51.png)
+![ScreenShot](screenshots/52.png)
 
 По логике, админ регистрировался раньше всех, поэтому ищем флаг в первых логинах.
 
-![ScreenShot](screenshots/52.png)
-
 ![ScreenShot](screenshots/53.png)
+
+![ScreenShot](screenshots/54.png)
 
 Флаг: **flag{sqli\_master}**
 
@@ -413,13 +413,13 @@ MZWGCZ33MRXW45DGN5ZGOZLUMFRG65LUIJAVGRJTGJ6Q==-==
 
 При открытии ссылки появляется следующее сообщение:
 
-![ScreenShot](screenshots/54.png)
+![ScreenShot](screenshots/55.png)
 
 Гуглим, как в запросе поменять user-agent и находим шаблон команды: curl -A "<custom\_user\_agent>" <url>
 
 Введем команду в CMD:
 
-![ScreenShot](screenshots/55.png)
+![ScreenShot](screenshots/56.png)
 
 Флаг: **flag{kpk\_best0fTheBest}**
 
@@ -431,35 +431,35 @@ MZWGCZ33MRXW45DGN5ZGOZLUMFRG65LUIJAVGRJTGJ6Q==-==
 
 Начальная часть
 
-![ScreenShot](screenshots/56.png)
+![ScreenShot](screenshots/57.png)
 
 Нижняя часть
 
-![ScreenShot](screenshots/57.png)
+![ScreenShot](screenshots/58.png)
 
 Структура файла напоминает структуру PNG-файла:
 
-![ScreenShot](screenshots/58.png)
+![ScreenShot](screenshots/59.png)
 
 Еще немного теории в схеме:
 
-![ScreenShot](screenshots/59.png)
+![ScreenShot](screenshots/60.png)
 
 Пример из GitHub:
 
-![ScreenShot](screenshots/60.png)
+![ScreenShot](screenshots/61.png)
 
 Поэтапно анализируем файл:
-
-![ScreenShot](screenshots/61.png)
 
 ![ScreenShot](screenshots/62.png)
 
 ![ScreenShot](screenshots/63.png)
 
+![ScreenShot](screenshots/64.png)
+
 После всех изменений сохраняем файл:
 
-![ScreenShot](screenshots/64.png)
+![ScreenShot](screenshots/65.png)
 
 Флаг: **flag{H3aderl3ss\_h0rs3man}**
 
@@ -469,25 +469,25 @@ MZWGCZ33MRXW45DGN5ZGOZLUMFRG65LUIJAVGRJTGJ6Q==-==
 
 Описание задания: в одной библиотеке, существовавшей еще тогда, когда все люди говорили на одном языке, уже было все, что может написать человек. Флаг к этому таску там тоже был. Единственная проблема в том, что в таком количестве информации сложно что-то найти. Хорошо, что у нас есть карта! (К флагу нужно добавить обертку flag{}).
 
-![ScreenShot](screenshots/65.png)
+![ScreenShot](screenshots/66.png)
 
 Хинт - почитайте что такое Library of Babel
 
-![ScreenShot](screenshots/66.png)
+![ScreenShot](screenshots/67.png)
 
 Ссылка на ресурс: https://libraryofbabel.info/
 
 Переходим во вкладку «Browse» и копируем в поле «Hex Name» данный нам текст:
 
-![ScreenShot](screenshots/67.png)
+![ScreenShot](screenshots/68.png)
 
 Далее, следуя указаниям, выбираем наши параметры w, s, v:
 
-![ScreenShot](screenshots/68.png)
+![ScreenShot](screenshots/69.png)
 
 В итоге открывается текст и в заголовке flag!
 
-![ScreenShot](screenshots/69.png)
+![ScreenShot](screenshots/70.png)
 
 Флаг: **flag{theflaghasalwaysbeenhere}**
 
@@ -501,11 +501,11 @@ MZWGCZ33MRXW45DGN5ZGOZLUMFRG65LUIJAVGRJTGJ6Q==-==
 
 Для начала просто попробуем загуглить:
 
-![ScreenShot](screenshots/70.png)
+![ScreenShot](screenshots/71.png)
 
 А в итоге находим имя собаки по самой первой ссылке!)
 
-![ScreenShot](screenshots/71.png)
+![ScreenShot](screenshots/72.png)
 
 Флаг: **flag{AlienGo}**
 
@@ -524,15 +524,15 @@ MZWGCZ33MRXW45DGN5ZGOZLUMFRG65LUIJAVGRJTGJ6Q==-==
 
 ТХТ – Институт Тонких Химических Технологий, к нему и направляемся:
 
-![ScreenShot](screenshots/72.png)
+![ScreenShot](screenshots/73.png)
 
 Далее движемся влево и видим скалодром:
 
-![ScreenShot](screenshots/73.png)
+![ScreenShot](screenshots/74.png)
 
 После этого снова гуглим и находим информацию про данный скалодром:
 
-![ScreenShot](screenshots/74.png)
+![ScreenShot](screenshots/75.png)
 
 Флаг: **flag{12\_15}**
 
@@ -542,11 +542,11 @@ MZWGCZ33MRXW45DGN5ZGOZLUMFRG65LUIJAVGRJTGJ6Q==-==
 
 Переходим по ссылке и скачиваем файл result.png, в котором при открытии не обнаруживаем ничего особенного. Размер картинки составляет 26х1 пикселей. Что-то похожее уже было в перовом General Skills. Соответственно, если не знаешь, что делать с картинкой – просканируй пиксели. 
 
-![ScreenShot](screenshots/75.png)
+![ScreenShot](screenshots/76.png)
 
 В результате выполнения кода представлен набор rgb-значений для каждого пикселя.
 
-![ScreenShot](screenshots/76.png)
+![ScreenShot](screenshots/77.png)
 
 Далее было не очень понятно, пробовал различные конверторы, но результата не было. Поэтому ждал до хинта: «Работать нужно с одним из rgb-значений»
 
@@ -554,13 +554,13 @@ MZWGCZ33MRXW45DGN5ZGOZLUMFRG65LUIJAVGRJTGJ6Q==-==
 
 И вот оно никак, но потом открыл-таки алфавит…
 
-![ScreenShot](screenshots/77.png)
+![ScreenShot](screenshots/78.png)
 
 И вот тут осенило! А что, если попробовать вычитать из 255 каждое полученное значение? В итоге – сработало:
 
-![ScreenShot](screenshots/78.png)
-
 ![ScreenShot](screenshots/79.png)
+
+![ScreenShot](screenshots/80.png)
 
 Флаг: **flag{iwillbethekingofthepirates}**
 
@@ -572,23 +572,23 @@ MZWGCZ33MRXW45DGN5ZGOZLUMFRG65LUIJAVGRJTGJ6Q==-==
 
 Выполняем эту команду:
 
-![ScreenShot](screenshots/80.png)
+![ScreenShot](screenshots/81.png)
 
 Попробуем передать строку, которую от нас хотят в неизменном виде:
 
-![ScreenShot](screenshots/81.png)
+![ScreenShot](screenshots/82.png)
 
 Не получилось. В таком случае, декодируем биты в текст и получаем «basilisk». Вставим это слово:
 
-![ScreenShot](screenshots/82.png)
+![ScreenShot](screenshots/83.png)
 
 Далее интереснее – ASCII Code – получаем «kingisher». Введем:
 
-![ScreenShot](screenshots/83.png)
+![ScreenShot](screenshots/84.png)
 
 В третьем случае, очевидно, hex. Декодируем и получаем следующую строку – «wolverine»:
 
-![ScreenShot](screenshots/84.png)
+![ScreenShot](screenshots/85.png)
 
 Флаг: f**lag{f3w\_w4y5\_t0\_c0n3rt\_5ting5}**
 
